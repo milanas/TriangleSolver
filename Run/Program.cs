@@ -35,7 +35,7 @@ namespace Run
                     bool pathExist = Triangle.FindMaximumPathByOddEvenRule(matrix, rows, out path);
                     if (pathExist)
                     {
-                        Console.WriteLine("Maximum triangle path and sum: ");
+                        Console.WriteLine("Maximum path and sum in triangle: ");
                         Console.WriteLine(string.Join("->", path));
                         Console.WriteLine("{0} = {1}", path.Sum(), string.Join(" + ", path.Select(i => FormatNegativeNumbers(i))));
                     }
