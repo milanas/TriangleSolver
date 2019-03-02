@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Run", "Run\Run.csproj", "{9A88218E-3272-4F51-8FE5-C671E94411B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleSolver", "TriangleSolver\TriangleSolver.csproj", "{DFADE970-AFBE-4C3F-9E15-6D1BF873C3FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{2B8BDADD-8E6D-43DD-ACCD-9F0D056DD649}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A88218E-3272-4F51-8FE5-C671E94411B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A88218E-3272-4F51-8FE5-C671E94411B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A88218E-3272-4F51-8FE5-C671E94411B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A88218E-3272-4F51-8FE5-C671E94411B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFADE970-AFBE-4C3F-9E15-6D1BF873C3FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFADE970-AFBE-4C3F-9E15-6D1BF873C3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFADE970-AFBE-4C3F-9E15-6D1BF873C3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFADE970-AFBE-4C3F-9E15-6D1BF873C3FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B8BDADD-8E6D-43DD-ACCD-9F0D056DD649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B8BDADD-8E6D-43DD-ACCD-9F0D056DD649}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B8BDADD-8E6D-43DD-ACCD-9F0D056DD649}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B8BDADD-8E6D-43DD-ACCD-9F0D056DD649}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
