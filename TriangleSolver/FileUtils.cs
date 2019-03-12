@@ -16,9 +16,30 @@ namespace TriangleSolver
         /// <param name="filePath">Full input file path.</param>
         /// <param name="separator">File content elements separator.</param>
         /// <param name="rows">Number of rows.</param>
-        /// <returns>Return triangle data in nested list.</returns>
-        public static List<List<int>> ReadFileToNestedList(string filePath, char[] separator, out int rows)
+        /// <returns>Returns triangle data in nested list.</returns>
+        public static List<List<int>> ReadFileToNestedList(string filePath, string separator, out int rows)
         {
+            if (filePath == null)
+            {
+                throw new ArgumentNullException(nameof(filePath));
+            }
+
+            if (string.IsNullOrWhiteSpace(filePath))
+            {
+                throw new ArgumentOutOfRangeException(nameof(filePath));
+            }
+
+            if (!File.Exists(filePath))
+            {
+                throw new FileNotFoundException(filePath);
+            }
+
+            if (separator == null)
+            {
+                throw new ArgumentNullException(nameof(separator));
+            }
+
+            char[] separatorChars = separator.ToCharArray();
             string line;
             List <int> parts = null;
             rows = 0;
@@ -31,7 +52,7 @@ namespace TriangleSolver
                     {
                         try
                         {
-                            parts = line.Split(separator, StringSplitOptions.RemoveEmptyEntries).Select(i => int.Parse(i)).ToList();
+                            parts = line.Split(separatorChars, StringSplitOptions.RemoveEmptyEntries).Select(i => int.Parse(i)).ToList();
                         }
                         catch(Exception ex)
                         {
@@ -47,6 +68,22 @@ namespace TriangleSolver
                 }
             }
             return numbersList;
+        }
+
+        /// <summary>
+        /// Reads triangle data string to nested list.
+        /// </summary>
+        /// <param name="input">Triangle data inline.</param>
+        /// <param name="rowsSeparator">Rows separator.</param>
+        /// <param name="cellsSeparator">Cells separator.</param>
+        /// <returns>Returns triangle data in nested list.</returns>
+        public static List<List<int>> ParseTriangleValuesStringToMatrix(string input, string rowsSeparator, string cellsSeparator)
+        {
+            if (input == null)
+            {
+                return null;
+            }
+            return input.Split(new[] { rowsSeparator }, StringSplitOptions.RemoveEmptyEntries).Select(lvl1 => lvl1.Split(new[] { cellsSeparator }, StringSplitOptions.RemoveEmptyEntries).Select(val => int.Parse(val.Trim())).ToList()).ToList();
         }
     }
 }

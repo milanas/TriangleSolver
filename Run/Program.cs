@@ -9,11 +9,6 @@ namespace Run
 {
     class Program
     {
-        /// <summary>
-        /// File content separator.
-        /// </summary>
-        private static char[] _separator = new char[] { ' ', '\t' };
-
         static void Main(string[] args)
         {
             try
@@ -24,7 +19,7 @@ namespace Run
                 if (File.Exists(filePath))
                 {
                     int rows;
-                    var matrix = FileUtils.ReadFileToNestedList(filePath, _separator, out rows);
+                    var matrix = FileUtils.ReadFileToNestedList(filePath, " ", out rows);
                     if(rows < 2)
                     {
                         Console.WriteLine("Input data is invalid. The triangle can be at least from 2 rows.");
@@ -32,7 +27,7 @@ namespace Run
                     }
 
                     List<int> path;
-                    bool pathExist = Triangle.FindMaximumPathByOddEvenRule(matrix, rows, out path);
+                    bool pathExist = Triangle.FindMaximumPathByOddEvenRule(matrix, out path);
                     if (pathExist)
                     {
                         Console.WriteLine("Maximum path and sum in triangle: ");
